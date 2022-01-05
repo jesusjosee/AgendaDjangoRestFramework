@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Listado de las Apis creadas para la aplicacion Agenda </h1>
+
+        <div class="list-group">
+            <a href=" {% url 'listado-personas' %} " class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Listado de Todas las personas</h5>
+                </div>
+                <small>/api/personas/list/</small>
+
+            </a>
+          
+            <a href="{% url 'crear-persona' %}" class="list-group-item list-group-item-action list-group-item-primary"> 
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Crear un registro de personas</h5>
+                </div>
+                <small>/api/personas/create/</small>
+
+            </a>
+
+            <a href="{% url 'detail-persona' '1' %}" class="list-group-item list-group-item-action list-group-item-secondary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Mostrar un registro de 1 sola persona</h5>
+                </div>
+                <small>api/personas/detail/pk/</small>
+            </a>
+
+            <a href="{% url 'delete-person' '2' %}" class="list-group-item list-group-item-action list-group-item-success">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Borrar un registro de persona</h5>
+                </div>
+                <small>api/personas/delete/pk/</small>
+            </a>
+
+            <a href="{% url 'update-person' '1' %}" class="list-group-item list-group-item-action list-group-item-danger">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Actualizar un registro de persona sin traer datos</h5>
+                </div>
+                <small>api/personas/update/pk/</small>
+            </a>
+
+            <a href="{% url 'update-person-data' '1' %}" class="list-group-item list-group-item-action list-group-item-warning">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Actualizar un registro de persona con datos cargados</h5>
+                </div>
+                <small>api/personas/update-retrieve/pk/</small>
+            </a>
+
+            <a href="{% url 'listado-nuevo-campo' %}" class="list-group-item list-group-item-action list-group-item-info">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Listado de personas con un campo adicional que no esta en la base de datos</h5>
+                </div>
+                <small>api/personas/lista-serializer2</small>
+            </a>
+
+            <a href="{% url 'reuniones' %}" class="list-group-item list-group-item-action list-group-item-light">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Listado de reuniones con campo Foreign Key</h5>
+                </div>
+                <small>api/reuniones/</small>
+            </a>
+
+            <a href="{% url 'personas-many-to-many' %}" class="list-group-item list-group-item-action list-group-item-dark">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Listado de personas con campo Many to Many</h5>
+                </div>
+                <small>api/personas/list-manytomany/</small>
+            </a>
+
+            <a href="{% url 'reuniones-method' %}" class="list-group-item list-group-item-action list-group-item-success">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Reuniones con un Metodo</h5>
+                </div>
+                <small>api/reuniones-method/</small>
+            </a>
+
+            <a href="{% url 'reuniones-link' %}" class="list-group-item list-group-item-action list-group-item-danger">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Reuniones con un LINK a un campo Foreignk Key</h5>
+                </div>
+                <small>api/reuniones-link//</small>
+            </a>
+
+            <a href="{% url 'personas-paginacion' %}" class="list-group-item list-group-item-action list-group-item-warning">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Personas con Paginacion</h5>
+                </div>
+                <small>api/personas/paginacion/</small>
+            </a>
+
+          </div>
+    </div>
+    
+
+{% endblock content %}
